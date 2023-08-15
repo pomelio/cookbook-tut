@@ -1,0 +1,12 @@
+import ext.HttpContext as web;
+import std.string as str;
+import ext.DownloadDocs as dd;
+
+
+let ppath = web.path();
+
+if ppath == '/' || str.ends_with(ppath, '.md') {
+  dispatch('/markdown', {});
+} else {
+  web.set_status(404);
+}
