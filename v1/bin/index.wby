@@ -1,6 +1,5 @@
 import ext.HttpContext as web;
 import std.string as str;
-import ext.DownloadDocs as dd;
 
 
 let ppath = web.path();
