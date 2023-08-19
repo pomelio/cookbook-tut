@@ -1,0 +1,17 @@
+import ext.web as web;
+import ext.MarkDownIt as md;
+import ext.mustache as mch;
+
+
+let ppath = web.path();
+
+if ppath == '/' {
+  ppath = '/docs/Test.md';
+}
+
+
+let md_result = md.render(ppath);
+let content = md.get_html(md_result);
+let html = mch.render('/docs/layout.mustache');
+
+web.body(html);

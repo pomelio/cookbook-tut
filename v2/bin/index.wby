@@ -1,0 +1,11 @@
+import ext.web as web;
+import std.string as str;
+
+
+let ppath = web.path();
+
+if ppath == '/' || str.ends_with(ppath, '.md') {
+  dispatch('/markdown', {});
+} else {
+  web.set_status(404);
+}
